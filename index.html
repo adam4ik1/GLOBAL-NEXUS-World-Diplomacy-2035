@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b18" />
+  <meta name="description" content="GLOBAL NEXUS 2035 — an interactive 3D city exploring international relations and diplomacy." />
+  <title>GLOBAL NEXUS — World Diplomacy 2035</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Global Nexus home">
+        <div class="brand-mark">GN<span>◆</span></div>
+        <div><strong>GLOBAL<span>NEXUS</span></strong><small>WORLD DIPLOMACY / 2035</small></div>
+      </a>
+      <div class="system-status"><i></i> GLOBAL NETWORK ONLINE <b>/</b> DIPLOMACY CORE 5.2</div>
+      <div class="top-actions">
+        <button id="themeBtn" class="outline-btn">☼ DAYLIGHT</button>
+        <button id="resetBtn" class="outline-btn">⌖ RESET VIEW</button>
+      </div>
+    </header>
+
+    <aside class="left-panel glass">
+      <div class="eyebrow">GLOBAL OVERVIEW <span></span></div>
+      <h1>THE WORLD<br><em>IS IN DIALOGUE.</em></h1>
+      <p class="intro">A connected diplomatic ecosystem where nations, institutions and global leaders work toward a more stable future.</p>
+      <div class="stats-grid">
+        <div class="stat"><small>PARTICIPATING STATES</small><strong>193</strong><label>UN MEMBERS</label></div>
+        <div class="stat"><small>DIPLOMATIC MISSIONS</small><strong>1.8<span>K</span></strong><label>GLOBAL NETWORK</label></div>
+        <div class="stat"><small>ACTIVE DIALOGUES</small><strong>64<span>%</span></strong><label class="up">+8.2% ↗</label></div>
+        <div class="stat"><small>COOPERATION INDEX</small><strong>87<span>.4</span></strong><label class="up">STABLE ●</label></div>
+      </div>
+      <div class="panel-divider"></div>
+      <div class="eyebrow">DIPLOMATIC NETWORK</div>
+      <div class="network-row"><b>◎</b><span>PEACE & SECURITY</span><strong>ACTIVE</strong></div>
+      <div class="network-row"><b>⌁</b><span>GLOBAL TRADE</span><strong>STABLE</strong></div>
+      <div class="network-row"><b>✧</b><span>CLIMATE ACTION</span><strong>IN SESSION</strong></div>
+      <div class="network-row"><b>◇</b><span>CULTURAL EXCHANGE</span><strong>CONNECTED</strong></div>
+      <div class="hint">DRAG TO ORBIT · SCROLL TO ZOOM</div>
+    </aside>
+
+    <main id="scene-wrap" aria-label="Interactive 3D diplomatic city">
+      <div id="loading"><div class="loader"></div><span>INITIALIZING GLOBAL NEXUS...</span></div>
+      <div class="scene-label">GLOBAL DIPLOMATIC DISTRICT <span>•</span> 3D SIMULATION</div>
+      <div class="scene-help">DRAG TO ROTATE &nbsp; / &nbsp; SCROLL TO ZOOM &nbsp; / &nbsp; CLICK A BUILDING</div>
+    </main>
+
+    <aside class="right-stack">
+      <section class="right-panel glass intelligence" id="infoPanel">
+        <div class="eyebrow">DIPLOMATIC INTELLIGENCE <span id="objectCount">00 / 09</span></div>
+        <div id="emptyInfo" class="empty-state"><div class="target">⌖</div><h2>SELECT AN<br>INSTITUTION</h2><p>Click any illuminated building in the diplomatic district to explore its mission, role and global impact.</p><small>● AWAITING INPUT</small></div>
+        <div id="buildingInfo" class="building-info hidden">
+          <div class="info-icon" id="infoIcon">◎</div>
+          <div class="info-type" id="infoType">INTERNATIONAL ORGANIZATION</div>
+          <h2 id="infoTitle">United Nations Forum</h2>
+          <p id="infoDescription"></p>
+          <div class="info-divider"></div>
+          <div class="info-metric"><span>CORE FUNCTION</span><strong id="infoFunction"></strong></div>
+          <div class="info-metric"><span>GLOBAL IMPACT</span><strong id="infoImpact"></strong></div>
+          <div class="info-tags" id="infoTags"></div>
+        </div>
+      </section>
+      <section class="right-panel glass focus-panel">
+        <div class="eyebrow">GLOBAL PRIORITIES <b class="live">LIVE</b></div>
+        <div class="priority"><div><span>PEACE & SECURITY</span><strong>78%</strong></div><div class="bar"><i style="width:78%"></i></div></div>
+        <div class="priority"><div><span>ECONOMIC COOPERATION</span><strong>86%</strong></div><div class="bar purple"><i style="width:86%"></i></div></div>
+        <div class="priority"><div><span>CLIMATE COMMITMENTS</span><strong>69%</strong></div><div class="bar blue"><i style="width:69%"></i></div></div>
+      </section>
+      <section class="right-panel glass briefing-panel">
+        <div class="eyebrow">DIPLOMATIC BRIEFING <span>2035</span></div>
+        <div class="briefing-number">24<span>H</span></div>
+        <p>Continuous multilateral dialogue across regions and policy areas.</p>
+        <div class="briefing-foot"><span>●</span> SIMULATED GLOBAL ACTIVITY</div>
+      </section>
+    </aside>
+    <footer class="footer"><span><i></i> GLOBAL NEXUS / EDUCATIONAL SIMULATION</span><span>INTERNATIONAL RELATIONS & DIPLOMACY</span><span>RENDER ENGINE <b>WEBGL / THREE.JS</b></span></footer>
+    <div id="toast" class="toast"></div>
+  </div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
